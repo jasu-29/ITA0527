@@ -1,0 +1,18 @@
+import cv2
+
+# Read image
+img = cv2.imread('image.jpg')
+
+# Resize smaller
+small = cv2.resize(img, (300, 300))
+
+# Resize bigger
+big = cv2.resize(img, (800, 800))
+
+# Display images
+cv2.imshow("Original Image", img)
+cv2.imshow("Smaller Image", small)
+cv2.imshow("Bigger Image", big)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
