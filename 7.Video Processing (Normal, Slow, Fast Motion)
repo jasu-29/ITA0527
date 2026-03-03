@@ -1,0 +1,28 @@
+import cv2
+
+cap = cv2.VideoCapture(0)  # 0 for webcam
+
+print("Press 's' for slow, 'f' for fast, 'n' for normal, 'q' to quit")
+
+delay = 30  # normal speed
+
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
+
+    cv2.imshow("Video", frame)
+
+    key = cv2.waitKey(delay) & 0xFF
+
+    if key == ord('s'):      # Slow motion
+        delay = 100
+    elif key == ord('f'):    # Fast motion
+        delay = 10
+    elif key == ord('n'):    # Normal speed
+        delay = 30
+    elif key == ord('q'):    # Quit
+        break
+
+cap.release()
+cv2.destroyAllWindows()
