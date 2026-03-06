@@ -1,0 +1,16 @@
+import cv2
+
+# Read image
+img = cv2.imread('image.jpg')
+
+# Crop region (ROI)
+roi = img[100:300, 100:300]
+
+# Copy ROI to another location
+img[300:500, 300:500] = roi
+
+# Display image
+cv2.imshow("ROI Image", img)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
