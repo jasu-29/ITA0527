@@ -1,0 +1,15 @@
+import cv2
+
+# Read original image
+img = cv2.imread('image.jpg')
+
+# Add watermark text
+watermarked = cv2.putText(img, 'WATERMARK', (50,50),
+                          cv2.FONT_HERSHEY_SIMPLEX,
+                          1, (255,255,255), 2)
+
+# Display result
+cv2.imshow("Watermarked Image", watermarked)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
